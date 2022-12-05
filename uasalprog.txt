@@ -1,0 +1,87 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+#include <stdio.h>
+
+using namespace std;
+int main()
+{
+	int kamar, harga, lama, bayar, total, hargadiskon;
+	float diskon;
+	string jkamar, pilih;
+	
+	awal:
+	cout<<endl;
+	cout<<"SISTEM INFORMASI PENYEWAAN KAMAR HOTEL ALFATIH"<<endl;
+	cout<<"        Daftar Jenis Kamar dan Harga"<<endl;
+	cout<<"*******************************************************"<<endl;
+	cout<<"Tipe Kamar            Jenis Kamar        Harga"<<endl;
+	cout<<"   1                  Tulip              Rp.500.000"<<endl;
+	cout<<"   2                  Teratai            Rp.1.000.000"<<endl;
+	cout<<"   3                  Anggrek            Rp.1.500.000"<<endl;
+	cout<<"   4                  Paviliun Rosalia   Rp.2.000.000"<<endl;
+	cout<<"   5                  Paviliun Cendana   Rp.3.000.000"<<endl;
+	cout<<"*******************************************************"<<endl;
+	cout<<"Pilih tipe Kamar (1-5)      :";
+	cin>>kamar;
+	cout<<"Berapa Malam Anda menginap  :";
+	cin>>lama;
+	cout<<"*******************************************************"<<endl;
+
+	if (kamar==1){
+		
+		harga=500000;
+		jkamar="Tulip";
+	}
+	else if (kamar==2){
+		harga=1000000;
+		jkamar="Teratai";
+	}
+	else if (kamar==3){
+		harga=1500000;
+		jkamar="Anggrek";
+	}
+	else if (kamar==4){
+		harga=2000000;
+		jkamar="Paviliun Rosalia";
+	}
+	else if (kamar==5){
+		harga=3000000;
+		jkamar="Paviliun Cendana";
+	}
+	
+	bayar=lama*harga;
+	cout<<"Anda Memilih tipe kamar         :"<<kamar<<endl;
+	cout<<"Jenis Kamar                     :"<<jkamar<<endl;
+	cout<<"Harga kamar Permalam            :"<<harga<<endl;
+	cout<<"Lama Menginap                   :"<<lama<<" Hari"<<endl;
+	cout<<"Total Harga sebelum diskon      :"<<"Rp."<<bayar<<endl;
+	
+	if (lama <=3){
+		diskon = 0.1;
+		
+	}
+	else if (lama >=4 && lama <6){
+		diskon = 0.2;
+		
+	}
+	else if (lama >=6){
+		diskon = 0.3;
+	
+	}
+	hargadiskon=diskon*bayar;
+	total = harga*lama-(diskon*bayar);
+	cout<<"Harga Diskon                    :"<<hargadiskon<<endl;
+	cout<<"Total harga yang harus di bayar :"<<"Rp."<<total<<endl;
+	cout<<"Anda ingin memilih tipe kamar lagi [Y/T]  :";
+	cin>>pilih;
+	
+	if (pilih=="Y"){
+		goto awal;
+	} 
+	else{
+		cout<<"Terimakasih, Anda telah melakukan pemesanan kamar pada Hotel Alfatih";
+	}
+	
+	      
+}  
